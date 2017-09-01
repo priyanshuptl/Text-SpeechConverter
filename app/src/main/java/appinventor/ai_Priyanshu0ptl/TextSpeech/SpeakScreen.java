@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.media.MediaRecorder;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.speech.tts.TextToSpeech;
@@ -31,6 +32,8 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import java.io.File;
+import java.lang.reflect.Array;
+import java.util.List;
 import java.util.Locale;
 
 import static android.speech.tts.TextToSpeech.LANG_MISSING_DATA;
@@ -55,7 +58,7 @@ public class SpeakScreen extends AppCompatActivity
     private boolean permissionToWriteAccepted = false;
     private String [] permissions = {Manifest.permission.RECORD_AUDIO};
     private String [] permissions1 = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-    String [] langs ={"English","Canada","Canada_French","China","French","German","Italian","Japanese","Korean","UK","US"};
+    String [] langs ={"English","Hindi","Canada","Canada_French","China","French","German","Italian","Japanese","Korean","UK","US"};
     private static final int REQUEST_WRITE_PERMISSION = 786;
     File file ;
     private SharedPreferences preferenceSetting;
@@ -385,6 +388,14 @@ public class SpeakScreen extends AppCompatActivity
         }
         else if (langs[position] == "US" ){
             result = tts.setLanguage(Locale.US);
+        }
+        else if (langs[position] == "Hindi" ){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                result = tts.setLanguage(Locale.forLanguageTag("hin"));
+            }
+            else{
+                Toast.makeText(getApplicationContext(),"This Language is not Supported in your Device", Toast.LENGTH_SHORT).show();
+            }
         }
 
     }
