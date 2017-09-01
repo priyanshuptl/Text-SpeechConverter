@@ -5,4 +5,7 @@
     <item android:title="About"
         android:id="@+id/action_About"
         />
+    <item android:title="Contact Us"
+        android:id="@+id/contactUs"
+        />
 </menu>

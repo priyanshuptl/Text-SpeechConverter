@@ -36,7 +36,8 @@
             android:theme="@android:style/Theme.Translucent" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".SpeakScreen" />
-        <activity android:name=".WriteScreen"></activity>
+        <activity android:name=".WriteScreen" />
+        <activity android:name=".ContactUsActivity"></activity>
     </application>
 
 </manifest>

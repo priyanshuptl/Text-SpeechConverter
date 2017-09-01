@@ -286,6 +286,10 @@ public class SpeakScreen extends AppCompatActivity
             Intent intent = new Intent(this, AboutActivity.class);
             startActivity(intent);
         }
+        if (id == R.id.contactUs) {
+            Intent intent = new Intent(this, ContactUsActivity.class);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }

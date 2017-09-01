@@ -21,5 +21,6 @@
     <string name="enter_text_here">Enter Text Here</string>
     <string name="save_audio">Save Audio</string>
     <string name="share_audio">Share Audio</string>
+    <string name="my_email">stw.softechworld@gmail.com</string>
     <string name="speak">Speak</string>
 </resources>
